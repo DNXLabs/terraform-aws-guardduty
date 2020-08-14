@@ -6,4 +6,10 @@ Amazon GuardDuty is a threat detection service that continuously monitors for ma
 
 More information: https://aws.amazon.com/guardduty/
 
+## Author
 
+Module managed by [DNX Solutions](https://github.com/DNXLabs).
+
+## License
+
+Apache 2 Licensed. See [LICENSE](https://github.com/DNXLabs/terraform-aws-audit/blob/master/LICENSE) for full details.
