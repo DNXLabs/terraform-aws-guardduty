@@ -11,6 +11,27 @@ More information: https://aws.amazon.com/guardduty/
 
 <!--- BEGIN_TF_DOCS --->
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12.0 |
+
+## Providers
+
+No provider.
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| account\_email | Account email for GuardDuty | `any` | n/a | yes |
+| master\_id | GuardDuty Detector ID for master account | `any` | n/a | yes |
+
+## Outputs
+
+No output.
+
 <!--- END_TF_DOCS --->
 
 ## Author
