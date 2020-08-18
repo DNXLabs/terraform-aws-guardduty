@@ -7,8 +7,8 @@ module "ap-southeast-1" {
   source = "./guardduty-region"
 
   aws_region    = "ap-southeast-1"
-  account_email = "${var.account_email}"
-  master_id     = "${var.master_id}"
+  account_email = var.account_email
+  master_id     = var.master_id
 }
 
 module "ap-southeast-2" {
@@ -20,6 +20,6 @@ module "ap-southeast-2" {
   source = "./guardduty-region"
 
   aws_region    = "ap-southeast-2"
-  account_email = "${var.account_email}"
-  master_id     = "${var.master_id}"
+  account_email = var.account_email
+  master_id     = var.master_id
 }
