@@ -15,14 +15,18 @@ This module creates the "member" side of Guardduty, with the assumption that the
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| aws | n/a |
+| random | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_email | Account email for GuardDuty | `any` | n/a | yes |
-| master\_id | GuardDuty Detector ID for master account | `any` | n/a | yes |
+| admin\_account\_id | GuardDuty Detector ID for master account | `any` | n/a | yes |
+| alarm\_slack\_severity | Minimum severity level (LOW, MEDIUM, HIGH) | `string` | `"HIGH"` | no |
+| alarm\_slack\_webhook | Slack Incoming Web Hook URL. Leave blank to disable alarm to slack | `string` | `""` | no |
 
 ## Outputs
 
