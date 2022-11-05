@@ -84,7 +84,7 @@ resource "aws_lambda_function" "guardduty_notification_lambda" {
 # This is to optionally manage the CloudWatch Log Group for the Lambda Function.
 resource "aws_cloudwatch_log_group" "guardduty_notification_log_group" {
   count             = var.enabled ? 1 : 0
-  name              = "/aws/lambda/${try(var.lambda_name, "guardduty_alarms")}"
+  name              = "/aws/lambda/${var.lambda_name}"
   retention_in_days = 14
 }
 
