@@ -61,7 +61,7 @@ resource "aws_iam_role_policy_attachment" "guardduty_notification_attach_policy"
 
 resource "aws_lambda_function" "guardduty_notification_lambda" {
   count            = var.enabled ? 1 : 0
-  function_name    = var.lambda_name, "guardduty_alarms"
+  function_name    = var.lambda_name
   filename         = data.archive_file.zip.output_path
   source_code_hash = data.archive_file.zip.output_base64sha256
   role             = aws_iam_role.guardduty_notification_iam_role[count.index].arn
