@@ -1,0 +1,9 @@
+workspaces:
+  prod-ap-southeast-2:
+    guardduty:
+      enabled: true
+      alarms:
+        enabled: true
+        slack_endpoint: https://hooks.slack.com/services/GDFA354552/AAAABBBBSFDR34534/0fkZ37I4gfhfhL1Q7Q5 # optional
+      lambda_name: "guardduty_alarms"
+      sns_email_arn: arn:aws:sns:ap-southeast-2:00000000000:alarmsTopic
