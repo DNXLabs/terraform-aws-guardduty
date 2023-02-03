@@ -32,3 +32,8 @@ variable "enable_detector" {
   description = "Enable GuardDuty Member Detector"
   default     = true
 }
+
+variable "member_detector_id" {
+  description = "GuardDuty Detector ID for member account. Only needed if enable_detector is false. Always for targettign any enable detector"
+  default    = ""
+}
