@@ -33,6 +33,11 @@ variable "enable_detector" {
   default     = true
 }
 
+variable "create_invite_accepter" {
+  description = "Create GuardDuty Member Invite Accepter. Not needed if already setup as part of an organization"
+  default     = true
+}
+
 variable "member_detector_id" {
   description = "GuardDuty Detector ID for member account. Only needed if enable_detector is false. Always for targettign any enable detector"
   default    = ""
