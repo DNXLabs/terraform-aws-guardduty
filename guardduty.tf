@@ -7,6 +7,6 @@ resource "aws_guardduty_detector" "member" {
 resource "aws_guardduty_invite_accepter" "member" {
   count = var.create_invite_accepter ? 1 : 0
 
-  detector_id       = try(aws_guardduty_detector.member.id, var.member_detector_id)
+  detector_id       = try(aws_guardduty_detector.member[0].id, var.member_detector_id)
   master_account_id = var.admin_account_id
 }
