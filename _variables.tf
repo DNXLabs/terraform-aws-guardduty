@@ -27,3 +27,8 @@ variable "sns_email_arn" {
   type        = string
   default     = ""
 }
+
+variable "enable_detector" {
+  description = "Enable GuardDuty Member Detector"
+  default     = true
+}
