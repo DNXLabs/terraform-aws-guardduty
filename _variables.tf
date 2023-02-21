@@ -39,6 +39,6 @@ variable "create_invite_accepter" {
 }
 
 variable "member_detector_id" {
-  description = "GuardDuty Detector ID for member account. Only needed if enable_detector is false. Always for targettign any enable detector"
+  description = "GuardDuty Detector ID for member account. Only needed if enable_detector is false. Used for targeting any previously enable detector"
   default    = ""
 }
