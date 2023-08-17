@@ -31,6 +31,9 @@ This module creates the "member" side of Guardduty, with the assumption that the
 | enabled | The boolean flag whether this module is enabled or not. No resources are created when set to false. | `bool` | `true` | no |
 | lambda\_name | Name of the Lambda Function | `any` | n/a | yes |
 | sns\_email\_arn | SNS Topic ARN | `string` | `""` | no |
+| enable\_detector | Enable GuardDuty Member Detector | `bool` | `true` | no |
+| create\_invite\_accepter | Create GuardDuty Member Invite Accepter. Not needed if already setup as part of an organization | `bool` | `true` | no |
+| member\_detector\_id | GuardDuty Detector ID for member account. Only needed if enable_detector is false. Used for targeting any previously enable detector | `string` | `""` | no |
 
 ## Outputs
 
