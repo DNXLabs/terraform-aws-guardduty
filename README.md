@@ -25,15 +25,16 @@ This module creates the "member" side of Guardduty, with the assumption that the
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| admin\_account\_id | GuardDuty Detector ID for master account | `any` | n/a | yes |
+| admin\_account\_id | GuardDuty Detector ID for master account | `string` | n/a | yes |
 | alarm\_slack\_severity | Minimum severity level (LOW, MEDIUM, HIGH) | `string` | `"HIGH"` | no |
 | alarm\_slack\_webhook | Slack Incoming Web Hook URL. Leave blank to disable alarm to slack | `string` | `""` | no |
+| create\_invite\_accepter | Create GuardDuty Member Invite Accepter. Not needed if already setup as part of an organization | `bool` | `true` | no |
+| enable\_detector | Enable GuardDuty Member Detector | `bool` | `true` | no |
 | enabled | The boolean flag whether this module is enabled or not. No resources are created when set to false. | `bool` | `true` | no |
 | lambda\_name | Name of the Lambda Function | `any` | n/a | yes |
+| member\_detector\_id | GuardDuty Detector ID for member account. Only needed if enable\_detector is false. Used for targeting any previously enable detector | `string` | `""` | no |
+| nodejs\_version | Version of Nodejs to create the lambda | `string` | `"nodejs18.x"` | no |
 | sns\_email\_arn | SNS Topic ARN | `string` | `""` | no |
-| enable\_detector | Enable GuardDuty Member Detector | `bool` | `true` | no |
-| create\_invite\_accepter | Create GuardDuty Member Invite Accepter. Not needed if already setup as part of an organization | `bool` | `true` | no |
-| member\_detector\_id | GuardDuty Detector ID for member account. Only needed if enable_detector is false. Used for targeting any previously enable detector | `string` | `""` | no |
 
 ## Outputs
 
