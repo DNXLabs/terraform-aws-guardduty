@@ -49,3 +49,9 @@ variable "member_detector_id" {
   type        = string
   default    = ""
 }
+
+variable "nodejs_version" {
+  type        = string
+  default     = "nodejs18.x"
+  description = "Version of Nodejs to create the lambda"
+}

@@ -10,7 +10,8 @@
                   },
                   "Parameters": [
                       "IncomingWebHookURL",
-                      "MinSeverityLevel"
+                      "MinSeverityLevel",
+                      "NodejsVersion"
                   ]
               }
           ],
@@ -20,6 +21,9 @@
               },
               "MinSeverityLevel" : {
                   "default"  : "Minimum severity level (LOW, MEDIUM, HIGH)"
+              },
+              "NodejsVersion": {
+                  "default": "Version of Nodejs to create the lambda"
               }
           }
       }
@@ -39,7 +43,12 @@
               "MEDIUM",
               "HIGH"
           ]
-      }
+      },
+      "NodejsVersion": {
+        "Default": "node18.x",
+        "Description": "Version of nodejs to use to create the lambda",
+        "Type": "String"
+    }
   },
   "Resources": {
       "GuardDutyToSlackRole": {
@@ -225,7 +234,7 @@
                         "minSeverityLevel" : {"Ref" : "MinSeverityLevel"}
                     }
                 },
-                "Runtime": "nodejs12.x",
+                "Runtime": { "Ref": "NodejsVersion" },
                 "MemorySize" : "128",
                 "Timeout": "10",
                 "Description" : "Lambda to push GuardDuty findings to slack",

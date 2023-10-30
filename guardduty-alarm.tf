@@ -14,6 +14,7 @@ resource "aws_cloudformation_stack" "guardduty_alarm_slack" {
   parameters = {
     IncomingWebHookURL = var.alarm_slack_webhook
     MinSeverityLevel   = var.alarm_slack_severity
+    NodejsVersion      = var.nodejs_version
   }
 
   template_body = file("${path.module}/guardduty-alarm-slack.cf.json")
