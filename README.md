@@ -12,12 +12,13 @@ This module creates the "member" side of Guardduty, with the assumption that the
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13.0 |
+| archive | >= 2.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| archive | n/a |
+| archive | >= 2.0.0 |
 | aws | n/a |
 | random | n/a |
 
