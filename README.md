@@ -11,13 +11,14 @@ This module creates the "member" side of Guardduty, with the assumption that the
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.0 |
+| terraform | >= 0.13.0 |
+| archive | >= 2.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| archive | n/a |
+| archive | >= 2.0.0 |
 | aws | n/a |
 | random | n/a |
 
@@ -31,7 +32,7 @@ This module creates the "member" side of Guardduty, with the assumption that the
 | create\_invite\_accepter | Create GuardDuty Member Invite Accepter. Not needed if already setup as part of an organization | `bool` | `true` | no |
 | enable\_detector | Enable GuardDuty Member Detector | `bool` | `true` | no |
 | enabled | The boolean flag whether this module is enabled or not. No resources are created when set to false. | `bool` | `true` | no |
-| lambda\_name | Name of the Lambda Function | `any` | n/a | yes |
+| lambda\_name | Name of the Lambda Function | `string` | n/a | yes |
 | member\_detector\_id | GuardDuty Detector ID for member account. Only needed if enable\_detector is false. Used for targeting any previously enable detector | `string` | `""` | no |
 | nodejs\_version | Version of Nodejs to create the lambda | `string` | `"nodejs18.x"` | no |
 | sns\_email\_arn | SNS Topic ARN | `string` | `""` | no |

@@ -23,6 +23,7 @@ variable "enabled" {
 }
 
 variable "lambda_name" {
+  type        = string
   description = "Name of the Lambda Function"
 }
 
@@ -47,7 +48,7 @@ variable "create_invite_accepter" {
 variable "member_detector_id" {
   description = "GuardDuty Detector ID for member account. Only needed if enable_detector is false. Used for targeting any previously enable detector"
   type        = string
-  default    = ""
+  default     = ""
 }
 
 variable "nodejs_version" {

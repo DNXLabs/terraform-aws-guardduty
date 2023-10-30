@@ -3,7 +3,6 @@
 #   }
 
 #create a zip file of our source code (python) to deploy it into lambda
-provider "archive" {}
 data "archive_file" "zip" {
   type        = "zip"
   source_file = "${path.module}/guardduty_notification.py"
@@ -86,6 +85,5 @@ resource "aws_lambda_function" "guardduty_notification_lambda" {
 resource "aws_cloudwatch_log_group" "guardduty_notification_log_group" {
   count             = var.enabled ? 1 : 0
   name              = "/aws/lambda/${var.lambda_name}"
-  retention_in_days = 14
+  retention_in_days = 365
 }
-
