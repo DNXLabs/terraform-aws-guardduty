@@ -23,6 +23,7 @@ variable "enabled" {
 }
 
 variable "lambda_name" {
+  type        = string
   description = "Name of the Lambda Function"
 }
 
