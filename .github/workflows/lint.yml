@@ -3,14 +3,6 @@ name: Lint
 on: [push]
 
 jobs:
-  tflint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: TFLint
-        uses: docker://wata727/tflint
-
   fmt:
     name: Code Format
     runs-on: ubuntu-latest
