@@ -67,7 +67,7 @@ resource "aws_lambda_function" "guardduty_notification_lambda" {
   source_code_hash = data.archive_file.zip.output_base64sha256
   role             = aws_iam_role.guardduty_notification_iam_role[count.index].arn
   handler          = "guardduty_notification.lambda_handler"
-  runtime          = "python3.8"
+  runtime          = "python3.12"
 
   environment {
     variables = {
