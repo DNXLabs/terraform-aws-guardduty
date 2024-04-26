@@ -11,7 +11,7 @@ This module creates the "member" side of Guardduty, with the assumption that the
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.0 |
+| terraform | >= 1.0.0 |
 
 ## Providers
 
