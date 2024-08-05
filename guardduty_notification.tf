@@ -24,13 +24,13 @@ data "aws_iam_policy_document" "guardduty_notification_trusted_policy" {
 
 resource "aws_iam_role" "guardduty_notification_iam_role" {
   count              = var.enabled ? 1 : 0
-  name               = "guardduty_notification_iam_role_lambda"
+  name               = "guardduty_notification_iam_role_lambda-${var.aws_region}"
   assume_role_policy = data.aws_iam_policy_document.guardduty_notification_trusted_policy.json
 }
 
 resource "aws_iam_policy" "guardduty_notification_lambda_logging_policy" {
   count       = var.enabled ? 1 : 0
-  name        = "guardduty_notification_lambda_logging_policy"
+  name        = "guardduty_notification_lambda_logging_policy-${var.aws_region}"
   path        = "/"
   description = "IAM policy for logging from a lambda"
 
@@ -85,7 +85,7 @@ resource "aws_lambda_function" "guardduty_notification_lambda" {
 # This is to optionally manage the CloudWatch Log Group for the Lambda Function.
 resource "aws_cloudwatch_log_group" "guardduty_notification_log_group" {
   count             = var.enabled ? 1 : 0
-  name              = "/aws/lambda/${var.lambda_name}"
+  name              = "/aws/lambda/${var.lambda_name}-${var.aws_region}"
   retention_in_days = 14
 }
 
