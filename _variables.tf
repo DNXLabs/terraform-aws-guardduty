@@ -4,9 +4,9 @@ variable "admin_account_id" {
 }
 
 variable "alarm_slack_webhook" {
-  description = "Slack Incoming Web Hook URL. Leave blank to disable alarm to slack"
-  type        = string
-  default     = ""
+  description = "Slack Incoming Web Hook URL(s). Can be a single URL or a list of URLs. Leave blank to disable alarm to slack"
+  type        = list(string)
+  default     = []
 }
 
 variable "alarm_slack_severity" {
