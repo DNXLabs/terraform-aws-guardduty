@@ -1,5 +1,5 @@
 resource "random_string" "guardduty_alarm_slack_suffix" {
-  count   = var.alarm_slack_webhook == "" ? 0 : 1
+  count   = length(var.alarm_slack_webhook) > 0 ? length(var.alarm_slack_webhook) : 0
   length  = 8
   special = false
   lower   = true
@@ -8,11 +8,11 @@ resource "random_string" "guardduty_alarm_slack_suffix" {
 }
 
 resource "aws_cloudformation_stack" "guardduty_alarm_slack" {
-  count = var.alarm_slack_webhook == "" ? 0 : 1
-  name  = "guardduty-alarm-slack-${random_string.guardduty_alarm_slack_suffix[0].result}"
+  count = length(var.alarm_slack_webhook) > 0 ? length(var.alarm_slack_webhook) : 0
+  name  = "guardduty-alarm-slack-${random_string.guardduty_alarm_slack_suffix[count.index].result}"
 
   parameters = {
-    IncomingWebHookURL = var.alarm_slack_webhook
+    IncomingWebHookURL = var.alarm_slack_webhook[count.index]
     MinSeverityLevel   = var.alarm_slack_severity
     NodejsVersion      = var.nodejs_version
   }

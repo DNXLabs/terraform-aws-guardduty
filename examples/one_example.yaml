@@ -4,6 +4,8 @@ workspaces:
       enabled: true
       alarms:
         enabled: true
-        slack_endpoint: https://hooks.slack.com/services/GDFA354552/AAAABBBBSFDR34534/0fkZ37I4gfhfhL1Q7Q5 # optional
+        slack_endpoints: 
+          - https://hooks.slack.com/services/GDFA354552/AAAABBBBSFDR34534/0fkZ37I4gfhfhL1Q7Q5 # You can add multiple endpoints
+          # - https://hooks.slack.com/services/ANOTHER_WEBHOOK_URL # Example of another endpoint
       lambda_name: "guardduty_alarms"
       sns_email_arn: arn:aws:sns:ap-southeast-2:00000000000:alarmsTopic
