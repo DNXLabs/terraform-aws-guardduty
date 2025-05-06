@@ -55,9 +55,3 @@ variable "nodejs_version" {
   default     = "nodejs18.x"
   description = "Version of Nodejs to create the lambda"
 }
-
-variable "aws_region" {
-  type        = string
-  default     = "ap-southeast-2"
-  description = "AWS region"
-}
